@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/sfx/enemy-death.wav" type="AudioStream" id=1]
+
+[node name="death-sound" type="AudioStreamPlayer2D"]
+
+stream = ExtResource( 1 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+

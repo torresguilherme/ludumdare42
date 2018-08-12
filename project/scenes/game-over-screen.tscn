@@ -1,0 +1,155 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/game-over-screen.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/PressStart2P.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 32
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 2 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 16
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 2 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=3]
+
+size = 16
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 2 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="game-over-screen" type="VBoxContainer"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+script = ExtResource( 1 )
+_sections_unfolded = [ "Focus", "Grow Direction", "Hint", "Margin", "Mouse", "Rect", "Size Flags", "Theme" ]
+
+[node name="Label" type="Label" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1024.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "Boy you just got owned."
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Margin", "Theme", "custom_fonts" ]
+
+[node name="Label2" type="Label" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 36.0
+margin_right = 1024.0
+margin_bottom = 147.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+text = "Luckily with the newest technology built by the
+Cleitons, the checkpoint lamp, you can restart at the
+top of the last lamp you walked on.
+
+It's a pleasure bringing you back, and we hope
+you die again!"
+align = 1
+clip_text = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_fonts" ]
+
+[node name="retry" type="Button" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 151.0
+margin_right = 1024.0
+margin_bottom = 173.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 3 )
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Keep trying!"
+flat = false
+align = 1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="quit" type="Button" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 177.0
+margin_right = 1024.0
+margin_bottom = 199.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 3 )
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Nah.."
+flat = false
+align = 1
+_sections_unfolded = [ "custom_fonts" ]
+
+[connection signal="toggled" from="retry" to="." method="_on_retry_toggled"]
+
+[connection signal="toggled" from="quit" to="." method="_on_quit_toggled"]
+
+
